@@ -11,4 +11,11 @@
     text-align: center;
     padding: 1em;
     font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+    border: #E6EDF5 2px solid;
+}
+
+body {
+    background-color: #FAFAFA;
+
 }
