@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
+/**The style for the backend-page**/
 .prod-img {
     width: 40%;
+    border: #707070 1px solid;
 }
 
 .post {
@@ -18,4 +19,14 @@
 body {
     background-color: #FAFAFA;
 
+}
+
+.EditBtn {
+    background-color: #5F5F5F;
+    color: #F5F5F5;
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 8px 20px 8px 20px;
+    border-radius: 8%;
+    font-weight: 700;
 }
