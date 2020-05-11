@@ -14,6 +14,7 @@
     font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
     border: #E6EDF5 2px solid;
+
 }
 
 body {
@@ -30,3 +31,20 @@ body {
     border-radius: 8%;
     font-weight: 700;
 }
+
+
+
+/* /////// medium screen sizes /////// */
+@media all and (min-width:750px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-gap: 1em;
+        margin: 1em;
+    }
+
+
+}
+
+/*///// large screen styling /////////*/
+@media all and (min-width:1080px) {}
