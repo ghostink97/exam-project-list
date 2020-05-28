@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+*, * ::before, *::after{
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --light-gray: #F5F5F5;
+    --white: #FAFAFA;
+    --blue: #4D65CB;
+    --dark-gray: #333333;
+
+}
+
 /**The style for the backend-page**/
 html {
     height: 100%;
 }
 
 body {
-    background-color: #FAFAFA;
+    background-color: var(--white);
     margin: 0;
     padding: 0;
     display: flex;
@@ -26,13 +39,13 @@ body {
     text-align: center;
     padding: 1em;
     font-family: 'Roboto', sans-serif;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     border: #E6EDF5 2px solid;
 
 }
 
 .cat-name {
-    color: #4C4C4C;
+    color: var(--blue);
     font-weight: 400;
     font-size: 24px;
     text-transform: capitalize;
@@ -42,7 +55,7 @@ body {
 
 .prod-title {
     font-weight: 300;
-    color: #333333;
+    color: var(--dark-gray);
     font-size: 22px;
     font-weight: 300;
     text-transform: capitalize;
@@ -51,18 +64,19 @@ body {
 
 .prod-img {
     width: 50%;
-    border: #707070 1px solid;
+    border: var(--blue) 1px solid;
 }
 
 
 .prod-desc {
-    color: #333333;
+    color: var(--dark-gray);
     font-size: 16px;
     padding: 1em;
+    text-align: justify;
 }
 
 .price {
-    color: #333333;
+    color: var(--dark-gray);
     font-size: 18px;
     font-weight: 500;
 }
@@ -70,16 +84,24 @@ body {
 
 
 .EditBtn {
-    background-color: #5F5F5F;
-    color: #F5F5F5;
+    margin: 5em;
+    background-color: var(--blue);
+    border: 1px solid var(--white);
+    border-radius: 5px;
     text-transform: capitalize;
     font-size: 16px;
     padding: 8px 20px 8px 20px;
-    border-radius: 8%;
+    outline:none;
     font-weight: 700;
     cursor: pointer;
+    color: var(--light-gray);
 }
 
+ .EditBtn:hover{
+     border-color: rgb(152, 152, 152);
+     background-color: rgb(216, 216, 216);
+     color: rgb(33, 56, 159);
+ }
 .FooterBox {
     background-color: black;
     width: 100%;
@@ -90,7 +112,7 @@ body {
 
 
 .FooterText {
-    color: #F5F5F5;
+    color: var(--light-gray);
     text-align: center;
     padding: 1em;
     font-family: 'Roboto', sans-serif;
@@ -121,9 +143,12 @@ body {
     /*backend page style for tablet*/
     main {
         display: grid;
-        grid-template-columns: repeat(2, 50%);
-        grid-gap: 1em;
+        /*grid-template-columns: repeat(2, 50%);
+        grid-gap: 1em;*/
         margin: 1em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1em;
     }
 
     .prod-img {
