@@ -18,8 +18,10 @@ html {
     height: 100%;
 }
 
+.hide{display: none}
+
 body {
-    background-color: var(--white);
+    background-color: var(--light-gray);
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,13 +40,12 @@ body {
     margin: 2em;
     text-align: center;
     padding: 1em;
-    font-family: 'Roboto', sans-serif;
     background-color: var(--white);
     border: #E6EDF5 2px solid;
 
 }
 
-.cat-name {
+.cat-name, .cat-name2 {
     color: var(--blue);
     font-weight: 400;
     font-size: 24px;
@@ -83,7 +84,7 @@ body {
 
 
 
-.EditBtn {
+.niceButton {
     margin: 5em;
     background-color: var(--blue);
     border: 1px solid var(--white);
@@ -95,6 +96,20 @@ body {
     font-weight: 700;
     cursor: pointer;
     color: var(--light-gray);
+}
+
+.submitButton{
+    margin: 5em;
+    background-color: var(--blue);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 8px 20px 8px 20px;
+    outline:none;
+    font-weight: 700;
+    cursor: pointer;
+    color:var(--light-gray);
 }
 
  .EditBtn:hover{
@@ -115,7 +130,7 @@ body {
     color: var(--light-gray);
     text-align: center;
     padding: 1em;
-    font-family: 'Roboto', sans-serif;
+    
     font-size: 12px;
     font-weight: 300;
     padding: 1em;
@@ -166,7 +181,7 @@ body {
 /*///// large screen styling /////////*/
 @media all and (min-width:1080px) {
     .logoImg {
-        width: 12%;
+        width: 10%;
     }
 
 
