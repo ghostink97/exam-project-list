@@ -1,5 +1,5 @@
 
-const baseURL = "https://examproject-2dfd.restdb.io/rest/Drones";
+const baseURL = "https://examproject-2dfd.restdb.io/rest/drones";
 const headers = {
     "Content-Type": "application/json; charset=utf-8",
     "x-apikey": "5eb14f804064fd380416528c",
@@ -22,7 +22,7 @@ fetch(baseURL, {
 
 
 function showDrone(drone) {
-    console.log(drone);
+    //console.log(drone);
     let template = document.querySelector('template').content;
     let clone = template.cloneNode(true);
 
@@ -31,7 +31,8 @@ function showDrone(drone) {
     let form = clone.querySelector(".form")
     let submit = clone.querySelector("#subbtn")
 
-    clone.id = drone._id
+    //clone.id = drone._id
+    clone.querySelector("form").id = drone._id
     clone.querySelector(".cat-name").innerHTML = drone.catname;
     clone.querySelector(".cat-name2").innerHTML = drone.catname;
     clone.querySelector(".prod-title").innerHTML = drone.title;
@@ -49,20 +50,25 @@ function showDrone(drone) {
     });
 
     submit.addEventListener("click", function (e) {
-        let article = e.currentTarget.parentElement;
-        let drone_id = article.id;
-        fetch("https://examproject-2dfd.restdb.io/rest/Drones/" + drone_id.toString(),
+        let form = e.currentTarget.parentElement;
+        console.log(form);
+
+        let drone_id = form.id;
+        let url = "https://examproject-2dfd.restdb.io/rest/drones/" + drone_id.toString();
+        fetch(url,
             { method: "get", headers: headers }).then((e) => e.json()).then(drone => {
-                drone.price = article.querySelector(".form_price")
-                drone.title = article.querySelector(".form_name");
-                drone.description = article.querySelector(".form_description");
-                drone.link = article.querySelector(".form_link");
+                console.log(JSON.stringify(drone));
+                drone.price = form.querySelector(".form_price").value;
+                drone.title = form.querySelector(".form_name").value;
+                drone.description = form.querySelector(".form_description").value;
+                drone.link = form.querySelector(".form_link").value;
                 return drone;
             }).then((drone) => {
-                fetch("https://examproject-2dfd.restdb.io/rest/Drones/", {
-                    method: "put",
+                fetch(url, {
+                    method: "PUT",
                     headers: headers, body: JSON.stringify(drone)
-                })
+                }).then((e) => console.log(e))
+                    .then(() => window.location.reload());
             });
     })
 

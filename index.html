@@ -33,9 +33,9 @@
                 <button class="EditBtn niceButton" id="editBTN">edit</button>
             </div>
 
-            <form action="" class="form hide">
+            <form action="" class="form hide" id="ThatOneform">
                 <h2 class="cat-name2">Category Name</h2>
-                <input type="text" id="title" name="title" placeholder="drone name" required><br><br>
+                <input type="text" id="title" name="title" class="form_name" placeholder="drone name" required><br><br>
                 <input type="file" id="img" class=""> <br><br>
 
                 <label for="prod-desc">add description:</label>
@@ -43,7 +43,7 @@
                     required>Description...</textarea>
                 <input type="number" class="form_price" placeholder="Price" required> <br><br>
                 <input type="text" class="form_link" id="link" name="link" placeholder="link to drone" required><br><br>
-                <button class="submitButton niceButton" id="subbtn">Submit</button>
+                <button type="button" class="submitButton niceButton" id="subbtn">Submit</button>
             </form>
         </article>
     </template>
